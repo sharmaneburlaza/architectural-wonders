@@ -1,0 +1,37 @@
+<div>
+  <div class="text-center mt-4">
+      <h3>ARCHITECTURAL WONDERS OF THE WORLD 
+          <!-- <span (click)="toggleMode()">
+              <img class="toggle-img" *ngIf=" bgIcon === 'dark-mode' " src="../assets/images/sun.png" alt="">
+              <img class="toggle-img" *ngIf=" bgIcon === 'light-mode' " src="../assets/images/half-moon.png" alt="">
+          </span> -->
+      </h3>
+  </div>
+  <div class="container-fluid" style="height: 82vh;">
+      <router-outlet></router-outlet>
+  </div>
+  <div style="height: 8vh;">
+      <nav class="navbar navbar-expand-lg navbar-light shadow-5-strong px-4">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+              <ul class="navbar-nav ml-auto nav">
+                  <li class="nav-item nav-text">
+                      <a class="nav-link" routerLink="alphabetical" [routerLinkActive]="['active']">ALPHABETICAL</a>
+                  </li>
+                  <li class="nav-item nav-text">
+                      <a class="nav-link" routerLink="chronological" [routerLinkActive]="['active']">CHRONOLOGICAL</a>
+                  </li>
+                  <li class="nav-item nav-text">
+                      <a class="nav-link" routerLink="location" [routerLinkActive]="['active']">LOCATION</a>
+                  </li>
+                  <li class="nav-item nav-text">
+                      <a class="nav-link" routerLink="programmatic" [routerLinkActive]="['active']">PROGRAMMATIC</a>
+                  </li>
+                  <li class="nav-item nav-text">
+                      <a class="nav-link" routerLink="style" [routerLinkActive]="['active']">STYLE</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </div>
+</div>
+
