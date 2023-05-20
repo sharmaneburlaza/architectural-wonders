@@ -12,22 +12,3 @@ export interface ArchDataModel {
     codename: string,
     color: string
 }
-
-export enum Category {
-    ALPHABETICAL,
-    CHRONOLOGICAL,
-    LOCATION,
-    PROGRAMMATIC,
-    STYLE
-}
-
-export enum Programmatic {
-    CULTURAL = 'Cultural',
-    RELIGIOUS = 'Religious',
-    RESIDENTIAL = 'Residential'
-}
-
-export enum Location {
-    ASIA = 'Asia',
-    EUROPE = 'Europe'
-}

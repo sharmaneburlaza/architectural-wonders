@@ -1,17 +1,25 @@
+li {
+    background: transparent;
+}
+
 ul {
     list-style: none !important;
 }
 
 .container {
     position: fixed;
-    bottom: 12vh;
+    bottom: 10vh;
 }
 
 .group {
-    // width: 5vw;
-    font-size: 0.7vw;
-    font-family: 'Barlow Condensed';
     padding: 0.5vw;
+}
+
+p {
+    font-size: 0.9vw;
+    font-family: 'Barlow Condensed';
+    height: 2vw;
+    color: gray;
 }
 
 .group ul {
@@ -26,6 +34,11 @@ ul {
     font-size: 0.6vw;
     width: 2vw;
     font-family: 'Barlow';
+}
+
+.item:hover {
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 .group, .item {

@@ -1,1 +1,10 @@
-<p>details works!</p>
+<div *ngIf="archDetail" class="row py-2 contents">
+    <div class="text-center">
+        <img src="{{ archDetail.imageURL }}" alt="">
+        <h3 class="mt-3"> {{ archDetail.name }} </h3>
+        <p>Location: {{ archDetail.location }}</p>
+        <a class="btn btn-outline-info btn-sm" href="{{ archDetail.descriptionURL }}" role="button">
+            More Info
+        </a>
+    </div>
+</div>

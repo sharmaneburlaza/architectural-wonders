@@ -17,6 +17,5 @@ export class ProgrammaticComponent {
   ngOnInit() {
     this.archData = sortAlphabetical(ARCH_DATA, 'buildingType');
     this.groups = groupData(this.archData, 'buildingType');
-    console.log(this.groups)
   }
 }

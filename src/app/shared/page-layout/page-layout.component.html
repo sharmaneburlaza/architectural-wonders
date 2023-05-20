@@ -1,15 +1,16 @@
 <div class="d-flex justify-content-center">
     <div class="container">
         <ul class="list-group list-group-horizontal align-items-end justify-content-center">
-            <li *ngFor="let group of archData" class="group list-group-item">
+            <li *ngFor="let group of dataArr" class="group list-group-item">
                 <ul class="ul-group d-flex flex-wrap-reverse justify-content-center">
                     <li *ngFor="let item of group[1]" 
                     class="item" 
-                    [ngStyle]="{backgroundColor: item.color}">
+                    [ngStyle]="getDynamicStyle(item)"
+                    (click)="onClick($event, item)">
                         {{ item.codename }}
                     </li>
                 </ul>
-                {{ group[0] }}
+                <p>{{ group[0] }}</p>
             </li>
         </ul>
     </div>

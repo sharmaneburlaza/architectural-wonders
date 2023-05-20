@@ -17,6 +17,5 @@ export class LocationComponent {
   ngOnInit() {
     this.archData = sortAlphabetical(ARCH_DATA, 'continent');
     this.groups = groupData(this.archData, 'continent');
-    console.log(this.groups)
   }
 }

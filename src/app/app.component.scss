@@ -1,0 +1,31 @@
+h3 {
+    font-family: 'Prosto One';
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    color: gray;
+}
+
+a:hover {
+    color: yellowgreen;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.nav-text a {
+    font-family: 'Barlow';
+}
+
+.active {
+    color: green !important;
+    font-weight: bolder;
+}
+
+.toggle-img {
+    max-width: 2vw;
+}

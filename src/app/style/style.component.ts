@@ -17,6 +17,5 @@ export class StyleComponent {
   ngOnInit() {
     this.archData = ARCH_DATA.sort((a, b) => a.id - b.id);
     this.group = groupData(this.archData, 'style');
-    console.log(this.group)
   }
 }

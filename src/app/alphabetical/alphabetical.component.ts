@@ -18,6 +18,5 @@ export class AlphabeticalComponent {
   ngOnInit() {
     this.archData = sortAlphabetical(ARCH_DATA, 'name');
     this.groups = groupData(this.archData, 'name');
-    console.log(this.groups)
   }
 }

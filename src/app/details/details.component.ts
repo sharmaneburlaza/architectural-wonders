@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ARCH_DATA } from '../shared/data';
+import { ArchDataModel } from '../shared/models';
 
 @Component({
   selector: 'app-details',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
+  archDetail: ArchDataModel | undefined;
 
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.archDetail = ARCH_DATA.find(d => d.id === id);
+  }
 }
