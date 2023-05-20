@@ -8,24 +8,30 @@ ul {
 }
 
 .group {
-    width: 5vw;
-    font-size: 0.8vw;
+    // width: 5vw;
+    font-size: 0.7vw;
     font-family: 'Barlow Condensed';
-    padding: 0;
+    padding: 0.5vw;
 }
 
 .group ul {
     padding: 0 !important;
     margin: 0 !important;
+    // padding: 1vw 2vw;
 }
 
 .item {
-    margin: 0.5vw 1vw;
+    margin: 0.3vw 0.6vw;
     padding: 0.5vw;
     font-size: 0.6vw;
+    width: 2vw;
     font-family: 'Barlow';
 }
 
 .group, .item {
     text-align: center;
+}
+
+li {
+    border: none !important;
 }

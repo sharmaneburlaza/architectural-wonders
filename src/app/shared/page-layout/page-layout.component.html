@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="list-group list-group-horizontal align-items-end justify-content-center">
             <li *ngFor="let group of archData" class="group list-group-item">
-                <ul class="ul-group">
+                <ul class="ul-group d-flex flex-wrap-reverse justify-content-center">
                     <li *ngFor="let item of group[1]" 
                     class="item" 
                     [ngStyle]="{backgroundColor: item.color}">
