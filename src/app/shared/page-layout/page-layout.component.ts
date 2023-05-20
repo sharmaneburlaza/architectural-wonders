@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-layout',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-layout.component.scss']
 })
 export class PageLayoutComponent {
+  @Input() archData: any;
 
+  ngOnInit() {
+    console.log('page-layout', this.archData)
+  }
 }

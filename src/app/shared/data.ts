@@ -1,4 +1,6 @@
-export const arData = [
+import { ArchDataModel } from "./models";
+
+export const ARCH_DATA = [
     {
         "id": 1,
         "name": "Pyramid of Djoser",
