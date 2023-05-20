@@ -11,13 +11,13 @@ import { groupData, sortAlphabetical } from '../shared/utils-helper';
 export class AlphabeticalComponent {
 
   archData: ArchDataModel[] = [];
-  group!: any;
+  groups!: any;
 
   constructor() {}
 
   ngOnInit() {
     this.archData = sortAlphabetical(ARCH_DATA, 'name');
-    this.group = groupData(this.archData, 'name');
-    console.log(this.group)
+    this.groups = groupData(this.archData, 'name');
+    console.log(this.groups)
   }
 }

@@ -6,9 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./page-layout.component.scss']
 })
 export class PageLayoutComponent {
-  @Input() archData: any;
+  @Input() archData!: any;
 
   ngOnInit() {
-    console.log('page-layout', this.archData)
+    // console.log('page-layout', this.archData)
+    this.archData = Object.entries(this.archData)
   }
 }

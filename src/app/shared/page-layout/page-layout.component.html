@@ -1,1 +1,16 @@
-<p>page-layout works!</p>
+<div class="d-flex justify-content-center">
+    <div class="container">
+        <ul class="list-group list-group-horizontal align-items-end justify-content-center">
+            <li *ngFor="let group of archData" class="group list-group-item">
+                <ul class="ul-group">
+                    <li *ngFor="let item of group[1]" 
+                    class="item" 
+                    [ngStyle]="{backgroundColor: item.color}">
+                        {{ item.codename }}
+                    </li>
+                </ul>
+                {{ group[0] }}
+            </li>
+        </ul>
+    </div>
+</div>

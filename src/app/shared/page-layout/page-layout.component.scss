@@ -1,0 +1,31 @@
+ul {
+    list-style: none !important;
+}
+
+.container {
+    position: fixed;
+    bottom: 12vh;
+}
+
+.group {
+    width: 5vw;
+    font-size: 0.8vw;
+    font-family: 'Barlow Condensed';
+    padding: 0;
+}
+
+.group ul {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.item {
+    margin: 0.5vw 1vw;
+    padding: 0.5vw;
+    font-size: 0.6vw;
+    font-family: 'Barlow';
+}
+
+.group, .item {
+    text-align: center;
+}
