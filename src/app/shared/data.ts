@@ -3,7 +3,7 @@ import { ArchDataModel } from "./models";
 export const ARCH_DATA = [
     {
         "id": 1,
-        "name": "Pyramid of Djoser",
+        "name": "Step Pyramid of Djoser",
         "yearBuilt": "2667–2648 BC",
         "style": "Egyptian",
         "buildingType": "Memorial",
@@ -12,7 +12,7 @@ export const ARCH_DATA = [
         "continent": "Africa",
         "descriptionURL": "https://en.wikipedia.org/wiki/Pyramid_of_Djoser",
         "imageURL": "https://www.cleopatraegypttours.com/wp-content/uploads/2018/07/pyramid-of-Djoser.jpg",
-        "codename":"POD",
+        "codename":"SPD",
         "color": "#566D7E"
     },
     {
@@ -681,7 +681,7 @@ export const ARCH_DATA = [
         "scale": "",
         "location": "Samarra, Iraq",
         "continent": "Asia",
-        "descriptionURL": "Great Mosque of Samarra",
+        "descriptionURL": "https://en.wikipedia.org/wiki/Great_Mosque_of_Samarra",
         "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/ba/001124-MalwiyaMosque-Samerra-IMG_7824-2.jpg",
         "codename":"GMS",
         "color": "#AA6C39"
@@ -1402,16 +1402,16 @@ export const ARCH_DATA = [
     },
     {
         "id": 101,
-        "name": "Petit Trianon",
-        "yearBuilt": "1764",
-        "style": "Neo-classicism",
-        "buildingType": "Residential",
+        "name": "Cusco Cathedral",
+        "yearBuilt": "1249",
+        "style": "Rennaisance",
+        "buildingType": "Religious",
         "scale": "",
-        "location": "Versailles, France",
-        "continent": "Europe",
-        "descriptionURL": "https://en.wikipedia.org/wiki/Petit_Trianon",
-        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/7f/West_facade_of_Petit_Trianon_002.JPG",
-        "codename":"PeT",
+        "location": "Cusco, Peru",
+        "continent": "South America",
+        "descriptionURL": "https://en.wikipedia.org/wiki/Cusco_Cathedral",
+        "imageURL": "https://en.wikipedia.org/wiki/Cusco_Cathedral#/media/File:Cath%C3%A9drale_de_Cusco_D%C3%A9cembre_2007e.jpg",
+        "codename":"CUS",
         "color": "#872657"
     },
     {
@@ -1682,17 +1682,17 @@ export const ARCH_DATA = [
     },
     {
         "id": 121,
-        "name": "Lever House",
-        "yearBuilt": "1952",
-        "style": "International",
-        "buildingType": "Residential",
+        "name": "Mission San Xavier del Bac",
+        "yearBuilt": "1600",
+        "style": "Islamic",
+        "buildingType": "Religious",
         "scale": "",
-        "location": "New York City",
+        "location": "Arizona, USA",
         "continent": "North America",
-        "descriptionURL": "https://en.wikipedia.org/wiki/Lever_House",
-        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Lever_House_390_Park_Avenue.jpg",
-        "codename":"LeH",
-        "color": "#FF007F"
+        "descriptionURL": "https://en.wikipedia.org/wiki/Mission_San_Xavier_del_Bac",
+        "imageURL": "https://en.wikipedia.org/wiki/Mission_San_Xavier_del_Bac#/media/File:San_Xavier_del_Bac_in_overcast_weather.jpg",
+        "codename":"MSX",
+        "color": "#665D4E"
     },
     {
         "id": 122,

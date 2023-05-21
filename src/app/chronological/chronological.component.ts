@@ -27,8 +27,8 @@ export class ChronologicalComponent {
     }, Object.create(null));
 
     let arrGroup: [string, any][] = Object.entries(AD);
-    const ar1 = arrGroup[19][1].slice(0, 15);
-    const ar2 = arrGroup[19][1].slice(15);
+    const ar1 = arrGroup[19][1].slice(0, 14);
+    const ar2 = arrGroup[19][1].slice(14);
     arrGroup[19] = ["1900s", ar1];
     const insertAr = ["1950s", ar2];
 
