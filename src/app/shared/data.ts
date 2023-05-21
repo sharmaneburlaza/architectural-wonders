@@ -1410,7 +1410,7 @@ export const ARCH_DATA = [
         "location": "Cusco, Peru",
         "continent": "South America",
         "descriptionURL": "https://en.wikipedia.org/wiki/Cusco_Cathedral",
-        "imageURL": "https://en.wikipedia.org/wiki/Cusco_Cathedral#/media/File:Cath%C3%A9drale_de_Cusco_D%C3%A9cembre_2007e.jpg",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/67/Cath%C3%A9drale_de_Cusco_D%C3%A9cembre_2007e.jpg",
         "codename":"CUS",
         "color": "#872657"
     },
@@ -1970,7 +1970,7 @@ export const ARCH_DATA = [
         "location": "Yucatan, Mexico",
         "continent": "South America",
         "descriptionURL": "https://en.wikipedia.org/wiki/Uxmal",
-        "imageURL": "https://en.wikipedia.org/wiki/Uxmal#/media/File:Mexico-6362_-_Governor's_Palace_(4690921713).jpg",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Mexico-6362_-_Governor%27s_Palace_%284690921713%29.jpg",
         "codename":"GOP",
         "color": "#4B0165"
     }
