@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
 import { groupData } from '../shared/utils-helper';
@@ -8,7 +8,7 @@ import { groupData } from '../shared/utils-helper';
   templateUrl: './style.component.html',
   styleUrls: ['./style.component.scss']
 })
-export class StyleComponent {
+export class StyleComponent implements OnInit {
   archData: ArchDataModel[] = [];
   group!: any;
 

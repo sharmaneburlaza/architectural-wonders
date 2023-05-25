@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
 import { groupData, sortAlphabetical } from '../shared/utils-helper';
@@ -8,7 +8,7 @@ import { groupData, sortAlphabetical } from '../shared/utils-helper';
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss']
 })
-export class LocationComponent {
+export class LocationComponent implements OnInit {
   archData: ArchDataModel[] = [];
   groups!: any;
 

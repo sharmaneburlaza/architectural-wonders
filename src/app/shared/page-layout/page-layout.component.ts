@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArchDataModel } from '../models';
 
@@ -7,7 +7,7 @@ import { ArchDataModel } from '../models';
   templateUrl: './page-layout.component.html',
   styleUrls: ['./page-layout.component.scss']
 })
-export class PageLayoutComponent {
+export class PageLayoutComponent implements OnInit {
   @Input() archData!: ArchDataModel;
   dataArr!: any;
 

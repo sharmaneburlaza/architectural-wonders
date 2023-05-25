@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
 import { groupData, sortAlphabetical } from '../shared/utils-helper';
@@ -8,7 +8,7 @@ import { groupData, sortAlphabetical } from '../shared/utils-helper';
   templateUrl: './programmatic.component.html',
   styleUrls: ['./programmatic.component.scss']
 })
-export class ProgrammaticComponent {
+export class ProgrammaticComponent implements OnInit {
   archData: ArchDataModel[] = [];
   groups!: any;
 

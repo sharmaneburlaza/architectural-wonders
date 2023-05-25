@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
 import { sortAlphabetical, sortById } from '../shared/utils-helper';
@@ -8,7 +8,7 @@ import { sortAlphabetical, sortById } from '../shared/utils-helper';
   templateUrl: './chronological.component.html',
   styleUrls: ['./chronological.component.scss']
 })
-export class ChronologicalComponent {
+export class ChronologicalComponent implements OnInit {
   archData: ArchDataModel[] = [];
   groups!: any;
 
