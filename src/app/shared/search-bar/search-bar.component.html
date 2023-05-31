@@ -1,0 +1,12 @@
+<div class="input-group" style="width: 15vw;">
+    <div class="input-group-prepend">
+        <span class="input-group-text" style="height: 3.5vh;"><i class="bi bi-search"></i></span>
+    </div>
+    <input type="text" 
+        class="form-control" 
+        placeholder="Search" 
+        aria-label="Search" 
+        style="height: 3.5vh;"
+        [ngModel]="searchValue"
+        (ngModelChange)="onChange($event)">
+</div>

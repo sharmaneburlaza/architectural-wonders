@@ -5,6 +5,7 @@ import { ChronologicalComponent } from './chronological/chronological.component'
 import { DetailsComponent } from './details/details.component';
 import { LocationComponent } from './location/location.component';
 import { ProgrammaticComponent } from './programmatic/programmatic.component';
+import { SearchComponent } from './search/search.component';
 import { StyleComponent } from './style/style.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'programmatic', component: ProgrammaticComponent },
   { path: 'style', component: StyleComponent },
   { path: 'detail/:id', component: DetailsComponent },
+  { path: 'search', component: SearchComponent },
   { path: '', redirectTo: 'style', pathMatch: 'full' }
 ];
 

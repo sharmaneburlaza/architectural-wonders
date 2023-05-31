@@ -3,6 +3,7 @@ h3 {
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 3.5vh;
 }
 
 a {
@@ -27,5 +28,6 @@ a:link {
 }
 
 .toggle-img {
-    max-width: 2vw;
+    height: 5vh;
+    width: auto;
 }
