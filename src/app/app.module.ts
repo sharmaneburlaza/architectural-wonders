@@ -14,6 +14,7 @@ import { PageLayoutComponent } from './shared/page-layout/page-layout.component'
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
     StyleComponent,
     PageLayoutComponent,
     SearchComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

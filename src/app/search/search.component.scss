@@ -3,14 +3,23 @@
     height: 25vh;
 
     img {
-        min-width: 20vw; 
-        min-height: 20vh; 
+        width: 20vw; 
+        height: 20vh; 
         object-fit: cover;
     }
 
     img:hover {
         cursor: pointer;
     }
+}
+
+.card-text, h3 {
+    color: #888685;
+}
+
+.card-body {
+    height: 3vh;
+    padding: 0;
 }
 
 p {

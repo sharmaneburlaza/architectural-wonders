@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'archtl-wonders';
   mode: string | undefined;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     const mode = localStorage.getItem('mode');
@@ -30,5 +33,9 @@ export class AppComponent {
       element.style.background = 'transparent';
       element.style.color = 'black';
     }
+  }
+
+  onQuizClick() {
+    this.router.navigate(['/quiz']);
   }
 }

@@ -27,7 +27,11 @@ a:link {
     font-weight: bolder;
 }
 
-.toggle-img {
+.toggle-img, #quiz {
     height: 4vh;
     width: auto;
+}
+
+img:hover {
+    cursor: pointer;
 }

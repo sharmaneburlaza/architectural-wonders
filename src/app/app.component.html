@@ -5,9 +5,10 @@
         </div>
         <h3>ARCHITECTURAL WONDERS OF THE WORLD
         </h3>
-        <div (click)="toggleMode()" style="width: 15vw;"  class="d-flex flex-row-reverse">
-            <img class="toggle-img" *ngIf=" mode === 'dark-mode' " src="../assets/images/day.png" alt="">
-            <img class="toggle-img" *ngIf=" mode === 'light-mode' " src="../assets/images/night.png" alt="">
+        <div style="width: 15vw;"  class="d-flex flex-row-reverse">
+            <img (click)="toggleMode()" class="toggle-img" *ngIf=" mode === 'dark-mode' " src="assets/images/day.png" alt="">
+            <img (click)="toggleMode()" class="toggle-img" *ngIf=" mode === 'light-mode' " src="assets/images/night.png" alt="">
+            <img id="quiz" (click)="onQuizClick()" class="mx-2" src="../assets/images/quiz.png" alt="">
         </div>
     </div>
     <div class="container-fluid" style="height: 82vh;">
