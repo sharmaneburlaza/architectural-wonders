@@ -1,5 +1,5 @@
-<div class="mx-5" style="max-height: 80vh; overflow-y: scroll;">
-    <div class="d-flex flex-wrap align-content-start mx-5">
+<div style="max-height: 80vh; overflow-y: scroll;" class="justify-content-center text-center">
+    <div class="d-flex flex-wrap justify-content-center text-center">
         <ng-container *ngFor="let result of searchResults">
             <div class="card m-3">
                 <img class="card-img-top" [src]="result.imageURL" (click)="onClick($event, result)">
