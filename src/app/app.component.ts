@@ -8,25 +8,24 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'archtl-wonders';
-  mode: string | undefined;
+  isDarkMode: boolean = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    const mode = localStorage.getItem('mode');
-    this.mode = mode ? mode : 'light-mode';
-    localStorage.setItem('mode', 'light-mode');
-    this.changeStyle(this.mode);
+    this.isDarkMode = localStorage.getItem('isDarkMode') === 'true' ? true : false;
+    this.changeStyle(this.isDarkMode);
   }
 
   toggleMode() {
-    this.mode = this.mode === 'light-mode' ? 'dark-mode': 'light-mode';
-    this.changeStyle(this.mode);
+    this.isDarkMode = !this.isDarkMode;
+    this.changeStyle(this.isDarkMode);
+    localStorage.setItem('isDarkMode', this.isDarkMode.toString());
   }
 
-  changeStyle(mode: string): void {
+  changeStyle(isDarkMode: boolean): void {
     const element = document.body;
-    if (mode === 'dark-mode') {
+    if (isDarkMode) {
       element.style.background = '#222222';
       element.style.color = '#FFF5EE';
     } else {
