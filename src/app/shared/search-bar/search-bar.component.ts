@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { SharedService } from '../services/shared.service';
 
 @Component({
@@ -9,15 +10,27 @@ import { SharedService } from '../services/shared.service';
 })
 export class SearchBarComponent {
   searchQuery: any;
+  routerSubscription!: Subscription;
 
   constructor(
     private router: Router, 
-    private sharedService: SharedService,
+    private sharedService: SharedService
   ) {}
+
+  ngOnInit() {
+    this.routerSubscription = this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.searchQuery = '';
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.routerSubscription.unsubscribe();
+  }
 
   onChange(query: Event) {
     this.router.navigate(['/search']);
-    // console.log(query)
     this.emitEvent(query);
   }
 
@@ -25,7 +38,4 @@ export class SearchBarComponent {
     this.sharedService.emitCustomEvent(value);
   }
 
-  ngOnDestroy() {
-    this.searchQuery = null;
-  }
 }
