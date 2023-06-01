@@ -1,2 +1,12 @@
-<div>{{eventData}}</div>
-<h3 mt-5>this page is under construction...</h3>
+<div class="mx-5" style="max-height: 80vh; overflow-y: scroll;">
+    <div class="d-flex flex-wrap align-content-start mx-5">
+        <ng-container *ngFor="let result of searchResults">
+            <div class="card m-3">
+                <img class="card-img-top" [src]="result.imageURL" (click)="onClick($event, result)">
+                <div class="card-body text-center m-0">
+                    <p class="card-text">{{result.name}}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

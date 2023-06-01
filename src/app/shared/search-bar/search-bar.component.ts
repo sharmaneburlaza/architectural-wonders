@@ -8,20 +8,24 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
-  searchValue: any;
+  searchQuery: any;
 
   constructor(
     private router: Router, 
-    private sharedService: SharedService
+    private sharedService: SharedService,
   ) {}
 
-  onChange(value: Event) {
+  onChange(query: Event) {
     this.router.navigate(['/search']);
-    console.log(value)
-    this.emitEvent(value);
+    // console.log(query)
+    this.emitEvent(query);
   }
 
   emitEvent(value: any) {
     this.sharedService.emitCustomEvent(value);
+  }
+
+  ngOnDestroy() {
+    this.searchQuery = null;
   }
 }
