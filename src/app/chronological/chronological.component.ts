@@ -27,10 +27,10 @@ export class ChronologicalComponent implements OnInit {
     }, Object.create(null));
 
     let arrGroup: [string, any][] = Object.entries(AD);
-    const ar1 = arrGroup[19][1].slice(0, 14);
-    const ar2 = arrGroup[19][1].slice(14);
-    arrGroup[19] = ["1900s", ar1];
-    const insertAr = ["1950s", ar2];
+    const ar1 = arrGroup[19][1].slice(0, 13);
+    const ar2 = arrGroup[19][1].slice(13);
+    arrGroup[19] = ["1900s-a", ar1];
+    const insertAr = ["1900s-b", ar2];
 
     let sortedGroup = [...arrGroup, insertAr].sort((a, b) => a[0].localeCompare(b[0]));
     sortedGroup = [["BC", BC], ...sortedGroup];
