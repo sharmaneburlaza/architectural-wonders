@@ -28,7 +28,7 @@ export class ChronologicalComponent implements OnInit {
 
     let arrGroup: [string, any][] = Object.entries(AD);
     const ar1 = arrGroup[19][1].slice(0, 13);
-    const ar2 = arrGroup[19][1].slice(13);
+    const ar2 = arrGroup[19][1].slice(13, 26);
     arrGroup[19] = ["1900s-a", ar1];
     const insertAr = ["1900s-b", ar2];
 
