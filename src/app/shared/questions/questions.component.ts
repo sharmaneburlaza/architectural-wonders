@@ -17,6 +17,8 @@ export class QuestionsComponent {
   hasSelected: boolean = false;
   answer: string | undefined = '';
   isLoading: boolean = true;
+  score: number = 0;
+  questionsCount: number = 0;
 
   ngOnInit(): void {
     this.initHeading();
@@ -67,6 +69,7 @@ export class QuestionsComponent {
     this.choices.push(this.getPropValue(this.item));
     this.generateChoices();
     this.shuffledChoices = this.shuffleArray(this.choices);
+    this.questionsCount += 1;
     console.log(this.item)
   }
 
@@ -107,6 +110,10 @@ export class QuestionsComponent {
     } else if (this.quizType === 'location') {
       this.answer = this.item?.location
     }
+    if (this.answer === this.selectedOption) {
+      this.score += 1;
+    }
+    this.hasSelected = false;
   }
 
   shuffleArray(array: any) {
