@@ -22,20 +22,8 @@
         <nav class="navbar navbar-expand-lg navbar-light shadow-5-strong px-4">
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav ml-auto nav">
-                    <li class="nav-item nav-text">
-                        <a class="nav-link" routerLink="alphabetical" [routerLinkActive]="['active']">ALPHABETICAL</a>
-                    </li>
-                    <li class="nav-item nav-text">
-                        <a class="nav-link" routerLink="chronological" [routerLinkActive]="['active']">CHRONOLOGICAL</a>
-                    </li>
-                    <li class="nav-item nav-text">
-                        <a class="nav-link" routerLink="location" [routerLinkActive]="['active']">LOCATION</a>
-                    </li>
-                    <li class="nav-item nav-text">
-                        <a class="nav-link" routerLink="programmatic" [routerLinkActive]="['active']">PROGRAMMATIC</a>
-                    </li>
-                    <li class="nav-item nav-text">
-                        <a class="nav-link" routerLink="style" [routerLinkActive]="['active']">STYLE</a>
+                    <li class="nav-item nav-text" *ngFor="let path of paths">
+                        <a class="nav-link" [routerLink]="path" [routerLinkActive]="['active']">{{ path | uppercase }}</a>
                     </li>
                 </ul>
             </div>

@@ -9,12 +9,20 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'archtl-wonders';
   isDarkMode: boolean = false;
+  paths: string[] = [];
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.isDarkMode = localStorage.getItem('isDarkMode') === 'true' ? true : false;
     this.changeStyle(this.isDarkMode);
+    this.paths = [
+      'alphabetical',
+      'chronological',
+      'location',
+      'programmatic',
+      'style'
+    ]
   }
 
   toggleMode() {
