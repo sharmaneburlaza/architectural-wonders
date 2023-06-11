@@ -2,6 +2,16 @@
     height: 70vh;
 }
 
+h3 {
+    color: gray;
+}
+
 h3, button {
+    font-family: 'Prosto One';
+}
+
+#note, #backButton {
+    font-size: 12px;
+    color: gray;
     font-family: 'Barlow';
 }

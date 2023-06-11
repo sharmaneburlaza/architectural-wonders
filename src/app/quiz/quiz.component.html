@@ -21,10 +21,15 @@
         <div class="quiz-container text-center">
             <app-questions [quizType]="quizType"></app-questions>
         </div>
-        <div style="text-align: right;">
-            <button type="button" class="btn btn-light btn-sm" (click)="back()">
-                other quizzes <i class="bi bi-house"></i>
-            </button>
+        <div class="d-flex justify-content-center">
+            <p id="note" style="margin-top: 0.25rem; margin-bottom: 0rem;">
+                Note: Loading of the image may take a while. For comments and suggestions, email me at <u>smburlaza@alum.up.edu.ph</u>
+            </p>
+            <div class="mx-4">
+                <button id="backButton" type="button" class="btn btn-light btn-sm" (click)="back()">
+                    other quizzes <i class="bi bi-house"></i>
+                </button>
+            </div>
         </div>
     </div>
 </div>
