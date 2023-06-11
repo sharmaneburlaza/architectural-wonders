@@ -1,0 +1,32 @@
+<h3 class="mb-4">{{ heading }}</h3>
+<div *ngIf="isLoading" class="d-flex justify-content-center" style="margin-top: 30vh;">
+    <div class="spinner-border" role="status">
+    </div>
+</div>
+<div *ngIf="!isLoading" class="d-flex justify-content-center">
+    <img [src]="item?.imageURL" alt="" style="height: 60vh; max-width: 70vw;">
+    <div style="text-align: left;">
+        <div *ngFor="let option of shuffledChoices" class="m-4">
+            <input type="radio" name="option" [value]="option" [(ngModel)]="selectedOption" (ngModelChange)="onSelect()">
+            <label class="mx-2"> {{ option }} </label>
+        </div>
+        <div class="mx-4 my-5" style="height: 5vh;">
+            <div *ngIf="answer">
+                <p>Answer:</p>
+                <h4 style="color: green;">
+                    {{ answer }}
+                </h4>
+            </div>
+        </div>
+        <div class="mt-5">
+            <button type="button" class="btn btn-outline-success btn-sm mx-4" (click)="getAnswer()" [disabled]="!hasSelected">
+                See answer
+            </button>
+            <button type="button" class="btn btn-outline-info btn-sm" (click)="nextQuestion()">
+                Next question
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+

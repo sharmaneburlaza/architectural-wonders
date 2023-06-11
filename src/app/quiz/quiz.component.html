@@ -1,3 +1,30 @@
-<div class="d-flex justify-content-center text-center">
-    <h1 class="my-5">quizzes coming soon!</h1>
+<div class="pt-5">
+    <div *ngIf="!onQuiz" class="text-center ">
+        <h3>Click the quiz you want to take!</h3>
+        <div class="mt-5">
+            <button type="button" class="btn btn-outline-success btn-lg" (click)="handleButtonClick('name')">
+                Quiz 1: What is the name?
+            </button>
+        </div>
+        <div class="mt-5">
+            <button type="button" class="btn btn-outline-danger btn-lg" (click)="handleButtonClick('location')">
+                Quiz 2: Where is it located?
+            </button>
+        </div>
+        <div class="mt-5">
+            <button type="button" class="btn btn-outline-warning btn-lg" (click)="handleButtonClick('style')" disabled>
+                Quiz 3: What is the style?
+            </button>
+        </div>
+    </div>
+    <div *ngIf="onQuiz">
+        <div class="quiz-container text-center">
+            <app-questions [quizType]="quizType"></app-questions>
+        </div>
+        <div style="text-align: right;">
+            <button type="button" class="btn btn-light btn-sm" (click)="back()">
+                other quizzes <i class="bi bi-house"></i>
+            </button>
+        </div>
+    </div>
 </div>
