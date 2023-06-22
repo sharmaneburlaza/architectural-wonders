@@ -5,4 +5,10 @@
 
 input {
     font-family: 'Barlow';
+    font-size: 2vh;
+}
+
+.input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
