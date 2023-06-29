@@ -48,3 +48,25 @@ p {
 li {
     border: none !important;
 }
+
+.item {
+    animation: move;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@for $num from 161 through 1 {
+    .item:nth-child(#{$num}) {
+    //   bottom: ($num - 1) * 50vh;
+      animation-delay: $num * .01s;
+    }
+  }
+
+@keyframes move {
+    from {
+        transform: translateY(1vh);
+    }
+    to {
+        transform: translateY();
+    }
+}
