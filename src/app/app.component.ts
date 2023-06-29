@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +15,8 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.isDarkMode = localStorage.getItem('isDarkMode') === 'true' ? true : false;
+    // this.isDarkMode = localStorage.getItem('isDarkMode') === 'true' ? true : false;
+    this.isDarkMode = this.getTime() > 6 && this.getTime() < 12 ? false : true;
     this.changeStyle(this.isDarkMode);
     this.paths = [
       'alphabetical',
@@ -44,5 +46,10 @@ export class AppComponent {
 
   onQuizClick() {
     this.router.navigate(['/quiz']);
+  }
+
+  getTime(): number {
+    const d = new Date();
+    return d.getHours();
   }
 }
