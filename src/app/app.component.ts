@@ -15,8 +15,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // this.isDarkMode = localStorage.getItem('isDarkMode') === 'true' ? true : false;
-    this.isDarkMode = this.getTime() > 6 && this.getTime() < 12 ? false : true;
+    this.isDarkMode = this.getTime() > 6 && this.getTime() < 18 ? false : true;
     this.changeStyle(this.isDarkMode);
     this.paths = [
       'alphabetical',
@@ -24,7 +23,7 @@ export class AppComponent {
       'location',
       'programmatic',
       'style'
-    ]
+    ];
   }
 
   toggleMode() {
