@@ -1,3 +1,7 @@
+.input-group {
+    width: 15vw;
+}
+
 .input-group > .form-control {
     background: transparent;
     color: #888685;
@@ -11,4 +15,5 @@ input {
 .input-group-text {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    height: 3.5vh;
 }

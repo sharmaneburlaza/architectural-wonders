@@ -1,28 +1,40 @@
-.card {
-    width: 20vw;
-    height: 25vh;
+.search-results-container {
+    height: 80vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    img {
-        width: 20vw; 
-        height: 20vh; 
-        object-fit: cover;
-    }
+    .card {
+        width: 20vw;
+        height: 25vh;
+        margin: 20px;
+    
+        img {
+            width: 20vw; 
+            height: 20vh; 
+            object-fit: cover;
+        }
+    
+        img:hover {
+            cursor: pointer;
+        }
 
-    img:hover {
-        cursor: pointer;
+        .card-body {
+            height: 3vh;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                font-size: 1.5vh;
+                font-family: 'Barlow';
+            }
+        }
     }
 }
 
 .card-text, h3 {
-    color: #888685;
-}
-
-.card-body {
-    height: 3vh;
-    padding: 0;
-}
-
-p {
-    font-size: 1.5vh;
-    font-family: 'Barlow';
+    color: gray;
 }

@@ -1,38 +1,85 @@
-h3 {
-    font-family: 'Prosto One';
-    // background: -webkit-linear-gradient(rgb(245, 239, 181), #333);
-    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3.5vh;
+.main-container {
+    padding: 20px;
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+
+            h3 {
+                font-family: 'Prosto One';
+                // background: -webkit-linear-gradient(rgb(245, 239, 181), #333);
+                background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 3.5vh;
+            }
+        }
+
+        .images {
+            width: 15vw;
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 5px;
+
+            img {
+                height: 30px;
+                width: auto;
+                margin-left: 10px;
+            }
+
+            img:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .content {
+        height: 82vh;
+    }
+
+    .nav-container {
+        height: 8vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+
+            li {
+                margin: 0 10px;
+
+                a {
+                    color: gray;
+                    font-family: 'Barlow';
+                }
+                
+                a:hover {
+                    color: yellowgreen;
+                }
+                
+                a:link {
+                    text-decoration: none;
+                }
+
+                .active {
+                    color: green !important;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
 }
 
-a {
-    color: gray;
-}
 
-a:hover {
-    color: yellowgreen;
-}
 
-a:link {
-    text-decoration: none;
-}
 
-.nav-text a {
-    font-family: 'Barlow';
-}
 
-.active {
-    color: green !important;
-    font-weight: bolder;
-}
 
-.toggle-img, #quiz {
-    height: 4vh;
-    width: auto;
-}
-
-img:hover {
-    cursor: pointer;
-}

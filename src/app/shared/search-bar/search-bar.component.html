@@ -1,6 +1,6 @@
-<div class="input-group" style="width: 15vw;">
+<div class="input-group">
     <div class="input-group-prepend">
-        <span class="input-group-text" style="height: 3.5vh;"><i class="bi bi-search"></i></span>
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
     </div>
     <input type="text" 
         class="form-control" 
@@ -8,5 +8,6 @@
         aria-label="Search" 
         style="height: 3.5vh;"
         [(ngModel)]="searchQuery"
-        (ngModelChange)="onChange($event)">
+        (ngModelChange)="onChange($event)"
+    >
 </div>
