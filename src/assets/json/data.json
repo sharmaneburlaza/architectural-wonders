@@ -1,6 +1,4 @@
-import { ArchDataModel } from "./models";
-
-export const ARCH_DATA = [
+[
     {
         "id": 1,
         "name": "Step Pyramid of Djoser",
@@ -374,7 +372,7 @@ export const ARCH_DATA = [
         "location": "Mount Abu, India",
         "continent": "Asia",
         "descriptionURL": "https://www.mountabuonline.in/city-guide/vimal-vasahi-temple",
-        "imageURL": "https://www.optimatravels.com/images/rajasthan-images/vimala-vasahi-temple-mount-abu.jpg",
+        "imageURL": "https://im.hunt.in/cg/Mount-Abu/City-Guide/Pillars-of-Vimala-Vasahi-Temple.png",
         "codename":"JVV",
         "color": "#228B22"
     },
@@ -1690,7 +1688,7 @@ export const ARCH_DATA = [
         "location": "Arizona, USA",
         "continent": "North America",
         "descriptionURL": "https://en.wikipedia.org/wiki/Mission_San_Xavier_del_Bac",
-        "imageURL": "https://en.wikipedia.org/wiki/Mission_San_Xavier_del_Bac#/media/File:San_Xavier_del_Bac_in_overcast_weather.jpg",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/b6/San_Xavier_del_Bac_in_overcast_weather.jpg",
         "codename":"MSX",
         "color": "#665D4E"
     },
@@ -2253,47 +2251,5 @@ export const ARCH_DATA = [
         "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/74/University_of_Al_Qaraouiyine.jpg",
         "codename":"UQa",
         "color": "#2B542F"
-    },
-    // {
-    //     "id": 162,
-    //     "name": "Uffizi",
-    //     "yearBuilt": "1571",
-    //     "style": "Rennaisance",
-    //     "buildingType": "Cultural, Institutional",
-    //     "scale": "",
-    //     "location": "Italy",
-    //     "continent": "Europe",
-    //     "descriptionURL": "https://en.wikipedia.org/wiki/Uffizi",
-    //     "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/59/Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg",
-    //     "codename":"Uff",
-    //     "color": "#B5651E"
-    // },
-    // {
-    //     "id": 163,
-    //     "name": "",
-    //     "yearBuilt": "",
-    //     "style": "",
-    //     "buildingType": "Cultural, Institutional",
-    //     "scale": "",
-    //     "location": "",
-    //     "continent": "",
-    //     "descriptionURL": "",
-    //     "imageURL": "",
-    //     "codename":"",
-    //     "color": "#B5652E"
-    // },
-    // {
-    //     "id": 162,
-    //     "name": "",
-    //     "yearBuilt": "",
-    //     "style": "",
-    //     "buildingType": "",
-    //     "scale": "",
-    //     "location": "",
-    //     "continent": "",
-    //     "descriptionURL": "",
-    //     "imageURL": "",
-    //     "codename":"",
-    //     "color": ""
-    // }
+    }
 ]

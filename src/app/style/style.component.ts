@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
+import { DataService } from '../shared/services/data.service';
 import { groupData } from '../shared/utils-helper';
 
 @Component({
@@ -10,12 +10,14 @@ import { groupData } from '../shared/utils-helper';
 })
 export class StyleComponent implements OnInit {
   archData: ArchDataModel[] = [];
-  group!: any;
+  groups: any;
 
-  constructor() {}
+  constructor( private dataService: DataService ) {}
 
   ngOnInit() {
-    this.archData = ARCH_DATA.sort((a, b) => a.id - b.id);
-    this.group = groupData(this.archData, 'style');
+    this.dataService.getData().subscribe(data => {
+      this.archData = Object.values(data);
+      this.groups = groupData(this.archData, 'style');
+    })
   }
 }

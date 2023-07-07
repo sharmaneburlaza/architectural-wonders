@@ -1,35 +1,27 @@
-<div class="pt-5">
-    <div *ngIf="!onQuiz" class="text-center ">
+<div class="container">
+    <div *ngIf="!onQuiz" class="quiz-home">
         <h4>Click the quiz you want to take!</h4>
-        <div class="mt-5">
-            <button type="button" class="btn btn-outline-success btn-lg" (click)="handleButtonClick('name')">
-                Quiz 1: What is the name?
-            </button>
-        </div>
-        <div class="mt-5">
-            <button type="button" class="btn btn-outline-danger btn-lg" (click)="handleButtonClick('location')">
-                Quiz 2: Where is it located?
-            </button>
-        </div>
-        <div class="mt-5">
-            <button type="button" class="btn btn-outline-warning btn-lg" (click)="handleButtonClick('style')" disabled>
-                Quiz 3: What is the style?
-            </button>
-        </div>
+        <button type="button" class="btn btn-outline-success btn-lg" (click)="handleButtonClick('name')">
+            Quiz 1: What is the name?
+        </button>
+        <button type="button" class="btn btn-outline-danger btn-lg" (click)="handleButtonClick('location')">
+            Quiz 2: Where is it located?
+        </button>
+        <button type="button" class="btn btn-outline-warning btn-lg" (click)="handleButtonClick('style')" disabled>
+            Quiz 3: What is the style?
+        </button>
     </div>
-    <div *ngIf="onQuiz">
-        <div class="quiz-container text-center">
+    <div *ngIf="onQuiz" class="quiz-container">
+        <div class="question-container">
             <app-questions [quizType]="quizType"></app-questions>
         </div>
-        <div class="d-flex justify-content-center">
-            <p id="note" style="margin-top: 0.25rem; margin-bottom: 0rem;">
+        <div class="footer">
+            <button (click)="back()">
+                other quizzes <i class="bi bi-house"></i>
+            </button>
+            <p>
                 Note: Loading of the image may take a while. For comments and suggestions, email me at <u>smburlaza@alum.up.edu.ph</u>
             </p>
-            <div class="mx-4">
-                <button id="backButton" type="button" class="btn btn-light btn-sm" (click)="back()">
-                    other quizzes <i class="bi bi-house"></i>
-                </button>
-            </div>
         </div>
     </div>
 </div>

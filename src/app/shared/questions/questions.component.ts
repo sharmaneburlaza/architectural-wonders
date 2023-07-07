@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ARCH_DATA } from '../data';
 import { ArchDataModel } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-questions',
@@ -9,6 +9,7 @@ import { ArchDataModel } from '../models';
 })
 export class QuestionsComponent {
   @Input() quizType!: string;
+  rawArchData: ArchDataModel[] = [];
   heading!: string;
   item: ArchDataModel | null = null;
   choices: any = [];
@@ -20,13 +21,27 @@ export class QuestionsComponent {
   score: number = 0;
   questionsCount: number = 0;
 
-  ngOnInit(): void {
+  constructor(private dataService: DataService) {}
+
+  async ngOnInit(): Promise<void> {
+    await this.getData();
     this.initHeading();
     this.generateQuestion();
 
     setTimeout(() => {
       this.isLoading = false;
     }, 1500);
+  }
+
+  getData(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.dataService.getData().subscribe(data => {
+        this.rawArchData = Object.values(data);
+        resolve();
+      }, error => {
+        reject(error);
+      });
+    });
   }
 
   initHeading(): void {
@@ -64,23 +79,22 @@ export class QuestionsComponent {
   }
 
   generateQuestion(): any {
-    const index = this.generateRandomNum(ARCH_DATA.length);
-    this.item = ARCH_DATA[index];
+    const index = this.generateRandomNum(this.rawArchData.length);
+    this.item = this.rawArchData[index];
     this.choices.push(this.getPropValue(this.item));
     this.generateChoices();
     this.shuffledChoices = this.shuffleArray(this.choices);
     this.questionsCount += 1;
-    console.log(this.item)
   }
 
   generateChoices(): void {
     while (this.choices.length < 5) {
       let item;
       if (this.quizType === 'location') {
-        const sameContinent = ARCH_DATA.filter(c => this.item?.continent === c.continent);
+        const sameContinent = this.rawArchData.filter(c => this.item?.continent === c.continent);
         item = sameContinent[this.generateRandomNum(sameContinent.length)]
       } else {
-        item = ARCH_DATA[this.generateRandomNum(ARCH_DATA.length)];
+        item = this.rawArchData[this.generateRandomNum(this.rawArchData.length)];
       }
       const choice = this.getPropValue(item);
       if (!(this.choices.includes(choice))) {
@@ -101,7 +115,6 @@ export class QuestionsComponent {
 
   onSelect(): void {
     this.hasSelected = true;
-    console.log(this.selectedOption)
   }
 
   getAnswer(): void {

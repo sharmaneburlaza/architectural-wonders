@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
+import { DataService } from '../shared/services/data.service';
 import { SharedService } from '../shared/services/shared.service';
 
 @Component({
@@ -11,13 +11,29 @@ import { SharedService } from '../shared/services/shared.service';
 })
 export class SearchComponent {
   searchResults: ArchDataModel[] = [];
-  archData: ArchDataModel[] = ARCH_DATA;
+  archData: ArchDataModel[] = [];
 
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(
+    private sharedService: SharedService, 
+    private router: Router,
+    private dataService: DataService
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getData();
     this.sharedService.customEvent$.subscribe((data) => {
       this.performSearch(data);
+    });
+  }
+
+  getData(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.dataService.getData().subscribe(data => {
+        this.archData = Object.values(data);
+        resolve();
+      }, error => {
+        reject(error);
+      });
     });
   }
 

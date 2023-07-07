@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
-import { sortAlphabetical, sortById } from '../shared/utils-helper';
+import { DataService } from '../shared/services/data.service';
+import { sortById } from '../shared/utils-helper';
 
 @Component({
   selector: 'app-chronological',
@@ -9,14 +9,17 @@ import { sortAlphabetical, sortById } from '../shared/utils-helper';
   styleUrls: ['./chronological.component.scss']
 })
 export class ChronologicalComponent implements OnInit {
+  rawData: ArchDataModel[] = [];
   archData: ArchDataModel[] = [];
-  groups!: any;
+  groups: any;
 
-  constructor() {}
+  constructor( private dataService: DataService ) {}
 
-  ngOnInit() {
-    let BC = ARCH_DATA.filter(d => d.yearBuilt[d.yearBuilt.length -1] === 'C');
-    let AD = ARCH_DATA.filter(d => d.yearBuilt[d.yearBuilt.length -1] !== 'C');
+  async ngOnInit() {
+    await this.getData();
+
+    let BC = this.rawData.filter(d => d.yearBuilt[d.yearBuilt.length -1] === 'C');
+    let AD = this.rawData.filter(d => d.yearBuilt[d.yearBuilt.length -1] !== 'C');
 
     AD = sortById(AD).reduce((r: any, a: any) => {
       const yearBuilt = ((a.yearBuilt).split('-')[0]).padStart(4, "0");
@@ -35,5 +38,16 @@ export class ChronologicalComponent implements OnInit {
     let sortedGroup = [...arrGroup, insertAr].sort((a, b) => a[0].localeCompare(b[0]));
     sortedGroup = [["BC", BC], ...sortedGroup];
     this.groups = Object.fromEntries(sortedGroup);
+  }
+
+  getData(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.dataService.getData().subscribe(data => {
+        this.rawData = Object.values(data);
+        resolve();
+      }, error => {
+        reject(error);
+      });
+    });
   }
 }

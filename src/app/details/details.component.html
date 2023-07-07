@@ -1,13 +1,13 @@
-<div *ngIf="archDetail" class="row py-2 contents">
-    <div class="text-center">
+<div *ngIf="archDetail" class="detail-container">
+    <div class="img-container">
         <img src="{{ archDetail.imageURL }}" alt="">
-        <h3 class="mt-2"> {{ archDetail.name }} </h3>
+    </div>
+    <div class="description">
+        <h3> {{ archDetail.name }} </h3>
         <h5><i class="bi bi-geo-alt"></i> {{ archDetail.location }}</h5>
-        <div class="my-3">
-            <a class="btn btn-outline-info btn-sm" href="{{ archDetail.descriptionURL }}" target="_blank" role="button">
-                More Info 
-                <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-        </div>
+        <a class="btn btn-outline-info btn-sm" href="{{ archDetail.descriptionURL }}" target="_blank" role="button">
+            More Info 
+            <i class="bi bi-box-arrow-up-right"></i>
+        </a>
     </div>
 </div>

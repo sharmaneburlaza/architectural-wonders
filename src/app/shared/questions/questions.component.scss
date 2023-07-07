@@ -1,11 +1,62 @@
+.container {
+    width: 100vw;
+
+
+    .heading {
+        display: flex;
+        justify-content: center;
+
+        #score {
+            color: goldenrod;
+        }
+    }
+
+    .spinner {
+        display: flex;
+        justify-content: center;
+        margin-top: 30vh;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: row;
+
+        img {
+            height: 60vh; 
+            max-width: 70vw;
+        }
+
+        .options-container {
+            .option {
+                margin: 20px;
+            }
+
+            .buttons {
+                margin-top: 30px;
+            }
+
+            label {
+                margin-left: 10px;
+            }
+
+            .answer {
+                margin-top: 30px;
+                margin-left: 30px;
+
+                p {
+                    margin-bottom: 8px;
+                }
+
+                h4 {
+                    color: green;
+                }
+            }
+        }
+    }
+}
+
 h3, h4, h5, label, p {
     font-family: 'Barlow';
-}
-
-p {
-    margin-bottom: 8px;
-}
-
-#score {
-    color: goldenrod;
 }

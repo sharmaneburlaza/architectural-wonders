@@ -1,59 +1,53 @@
-li {
-    background: transparent;
-}
-
-ul {
-    list-style: none !important;
-}
-
 .container {
     position: fixed;
     bottom: 10vh;
+
+    ul {
+        list-style: none !important;
+    
+        li {
+            background: transparent;
+            border: none !important;
+        }
+    
+        .group {
+            padding: 0.5vw;
+        }
+    }
+    
+    p {
+        font-size: 0.9vw;
+        font-family: 'Barlow Condensed';
+        height: 2vw;
+        color: gray;
+    }
+    
+    .group ul {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .group, .item {
+        text-align: center;
+    }
+    
+    .item {
+        margin: 0.3vw 0.6vw;
+        padding: 0.5vw;
+        font-size: 0.6vw;
+        width: 2vw;
+        font-family: 'Barlow';
+        animation: move;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+    
+    .item:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+    }
 }
 
-.group {
-    padding: 0.5vw;
-}
-
-p {
-    font-size: 0.9vw;
-    font-family: 'Barlow Condensed';
-    height: 2vw;
-    color: gray;
-}
-
-.group ul {
-    padding: 0 !important;
-    margin: 0 !important;
-    // padding: 1vw 2vw;
-}
-
-.item {
-    margin: 0.3vw 0.6vw;
-    padding: 0.5vw;
-    font-size: 0.6vw;
-    width: 2vw;
-    font-family: 'Barlow';
-}
-
-.item:hover {
-    transform: scale(1.5);
-    cursor: pointer;
-}
-
-.group, .item {
-    text-align: center;
-}
-
-li {
-    border: none !important;
-}
-
-.item {
-    animation: move;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-}
 
 @for $num from 161 through 1 {
     .item:nth-child(#{$num}) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
+import { DataService } from '../shared/services/data.service';
 import { groupData, sortAlphabetical } from '../shared/utils-helper';
 
 @Component({
@@ -9,14 +9,15 @@ import { groupData, sortAlphabetical } from '../shared/utils-helper';
   styleUrls: ['./alphabetical.component.scss']
 })
 export class AlphabeticalComponent implements OnInit {
-
   archData: ArchDataModel[] = [];
-  groups!: any;
+  groups: any;
 
-  constructor() {}
+  constructor( private dataService: DataService ) {}
 
   ngOnInit() {
-    this.archData = sortAlphabetical(ARCH_DATA, 'name');
-    this.groups = groupData(this.archData, 'name');
+    this.dataService.getData().subscribe(data => {
+      this.archData = sortAlphabetical(data, 'name');
+      this.groups = groupData(this.archData, 'name');
+    })
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ARCH_DATA } from '../shared/data';
 import { ArchDataModel } from '../shared/models';
+import { DataService } from '../shared/services/data.service';
 
 @Component({
   selector: 'app-details',
@@ -10,11 +10,24 @@ import { ArchDataModel } from '../shared/models';
 })
 export class DetailsComponent implements OnInit {
   archDetail: ArchDataModel | undefined;
+  rawData: ArchDataModel[] = []
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private dataService: DataService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getData();
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.archDetail = ARCH_DATA.find(d => d.id === id);
+    this.archDetail = this.rawData.find(d => d.id === id);
+  }
+
+  getData(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.dataService.getData().subscribe(data => {
+        this.rawData = Object.values(data);
+        resolve();
+      }, error => {
+        reject(error);
+      });
+    });
   }
 }

@@ -8,8 +8,8 @@ import { ArchDataModel } from '../models';
   styleUrls: ['./page-layout.component.scss']
 })
 export class PageLayoutComponent implements OnInit {
-  @Input() archData!: ArchDataModel;
-  dataArr!: any;
+  @Input() archData: any;
+  dataArr: any;
 
   constructor(private router: Router) {}
 
