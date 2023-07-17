@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArchDataModel } from '../shared/models';
 import { DataService } from '../shared/services/data.service';
-import { SharedService } from '../shared/services/shared.service';
 
 @Component({
   selector: 'app-search',
@@ -10,19 +9,21 @@ import { SharedService } from '../shared/services/shared.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
+  searchQuery: string = '';
   searchResults: ArchDataModel[] = [];
   archData: ArchDataModel[] = [];
 
   constructor(
-    private sharedService: SharedService, 
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private route: ActivatedRoute
   ) {}
 
   async ngOnInit() {
     await this.getData();
-    this.sharedService.customEvent$.subscribe((data) => {
-      this.performSearch(data);
+    this.route.queryParams.subscribe(params => {
+      this.searchQuery = params['q'];
+      this.performSearch(this.searchQuery);
     });
   }
 
@@ -42,7 +43,6 @@ export class SearchComponent {
       this.searchResults = [];
       return;
     }
-
     this.searchResults = this.archData.filter(item => {
       return (
         item.name.toLowerCase().includes(query.toLowerCase())
